@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Route, Routes } from "react-router-dom"
 
-function App() {
+import Dashboard from './components/Dashboard';
+import BtcUSD from './components/BtcUSD';
+import DashboardMain from './dashboard/DashboardMain';
+
+export  const server = "https://trade-backend-rlpl.onrender.com/api/data";
+
+const App =() => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div >
+      <Routes>
+
+        <Route
+          element={
+            <DashboardMain/>
+          }
         >
-          Learn React
-        </a>
-      </header>
+          <Route path="/" element={
+            <Dashboard />}
+          />
+          <Route path="/btcusd" element={
+            <BtcUSD />
+          } />
+          
+
+        </Route>
+      </Routes>
     </div>
   );
 }
