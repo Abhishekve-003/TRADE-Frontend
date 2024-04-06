@@ -10,7 +10,7 @@ import TemporaryDrawer from './TemporaryDrawer';
 
 
 export default function SearchAppBar() {
-  const [drawerOpen, setDrawerOpen] = useState(true);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
